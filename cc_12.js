@@ -21,6 +21,28 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
 
     // Appending the card to the dashboard
-    
+
     dashboard.appendChild(revenueCard);
+});
+
+
+
+// Task 2 - Update Metric Cards via Array Conversion
+
+document.addEventListener('DOMContentLoaded', () => {
+   
+    // Selecting all metric cards
+
+    const metricCards = document.querySelectorAll('.metric-card');
+
+    // Converting NodeList to array
+
+    const metricCardsArray = Array.from(metricCards);
+
+    // Updating each metric card's inner text
+    
+    metricCardsArray.forEach(card => {
+        card.innerHTML += ' - Updated';
+        card.style.backgroundColor = 'lightblue'; // Optional style change
+    });
 });
