@@ -79,6 +79,30 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Event listener to add product on button click
-    
+
     addProductButton.addEventListener('click', addProduct);
+});
+
+
+
+// Task 4 - Demonstrated Event Bubbling in Customer Section
+
+document.addEventListener('DOMContentLoaded', () => {
+    const customerSection = document.getElementById('customerSection');
+    const customerCards = document.querySelectorAll('.customer-card');
+
+    // Event listener for the parent container (customerSection)
+
+    customerSection.addEventListener('click', () => {
+        console.log('Customer Section clicked');
+    });
+
+    // Event listener for individual customer cards
+    
+    customerCards.forEach(card => {
+        card.addEventListener('click', (event) => {
+            console.log('Customer card clicked');
+            event.stopPropagation(); // Prevents event bubbling to the parent container
+        });
+    });
 });
